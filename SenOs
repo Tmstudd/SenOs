@@ -1,0 +1,18 @@
+import os
+import pyfiglet
+import colorama
+from colorama import Fore,Back
+
+ni=pyfiglet.figlet_format('SenOs', font='3-d')
+print(Fore.YELLOW+ni)
+
+
+
+def send_notification(title, message):
+    os.system(f'notify-send "{title}" "{message}"')
+
+if __name__ == "__main__":
+    title = input("Введите заголовок уведомления: ")
+    message = input("Введите сообщение: ")
+    send_notification(title, message)
+    print("Уведомление отправлено.")
